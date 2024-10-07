@@ -14,8 +14,13 @@ class Reservation extends Model
         'time',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function services()
     {
-        return $this->belongsToMany(Service::class, 'service_reservation');
+        return $this->belongsToMany(Service::class);
     }
 }

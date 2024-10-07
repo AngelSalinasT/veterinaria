@@ -15,13 +15,8 @@ class Service extends Model
         'price',
     ];
 
-    public function pets()
-    {
-        return $this->hasMany(Pet::class);
-    }
-
     public function reservations()
     {
-        return $this->belongsToMany(Reservation::class, 'services_reservations');
+        return $this->belongsToMany(Reservation::class);
     }
 }
